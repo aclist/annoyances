@@ -17,6 +17,10 @@ eqlogin.py:
 
 EQ Emulator login servers can fail to connect when using Wine due to some Winsock anachronism. This Python script routes activity on port 5998 to the correct destination address. Found somewhere, archived for posterity.
 
+ppi:
+
+Report resolution, diagonal size (inches), and PPI of connected displays using xrandr.
+
 ## noita
 
 startpos:
