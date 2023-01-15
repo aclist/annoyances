@@ -1,0 +1,6 @@
+<Mod
+	name="Closer start position"
+	description="Start closer to the mine entrance to save time"
+	request_no_api_restrictions="0" 
+> 
+</Mod>

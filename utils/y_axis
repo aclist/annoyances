@@ -1,0 +1,16 @@
+#!/bin/bash
+# modify coordinate transformation matrix on Y axis
+
+TOGGLE=$HOME/.axis
+#id can be obtained via xinput-list
+id=8
+
+if [ ! -e $TOGGLE ]; then
+touch $TOGGLE
+xinput -set-prop $id 156 1 0 0 0 1.5 0 0 0 1
+echo Y-axis: 1.5x
+else
+rm $TOGGLE
+xinput set-prop $id 156 1 0 0 0 1 0 0 0 1
+echo Y-axis: 1x
+fi
