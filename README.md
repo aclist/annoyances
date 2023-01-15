@@ -27,4 +27,4 @@ Noita mod that sets the player X,Y start position closer to the mine entrance to
 
 no_startup:
 
-Naive method of disabling startup fanfare when booting the game.
+Naive method of disabling startup fanfare when booting Worms: Armageddon.
