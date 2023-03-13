@@ -1,4 +1,5 @@
 #!/bin/bash
+readarray -t disp < <(xrandr | awk '/ connected/ {print $1}')
 readarray -t diag < <(xrandr | awk '/ connected/{print sqrt( ($(NF-2)/10)^2 + ($NF/10)^2 )/2.54""}')
 readarray -t res1 < <(xrandr | awk '/*/ {gsub("x"," ",$0);print $1}')
 readarray -t res2 < <(xrandr | awk '/*/ {gsub("x"," ",$0);print $2}')
@@ -11,7 +12,7 @@ output(){
 		com=$((r1+r2))
 		res=$(bc <<< "scale=0; sqrt($com)")
 		ppi="$(echo "$res / ${diag[$i]}" | bc)"
-		printf "%s %s %s %s\n" "${res1[$i]}" "${res2[$i]}" "${diag[$i]}" "$ppi"
+		printf "%s %s %s %s %s\n" "${disp[$i]} ${res1[$i]}" "${res2[$i]}" "${diag[$i]}" "$ppi"
 	done
 }
 
