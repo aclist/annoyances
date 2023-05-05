@@ -5,7 +5,7 @@ readarray -t res1 < <(xrandr | awk '/*/ {gsub("x"," ",$0);print $1}')
 readarray -t res2 < <(xrandr | awk '/*/ {gsub("x"," ",$0);print $2}')
 
 output(){
-	printf "RES1 RES2 DIAG PPI\n"
+	printf "DISP RES1 RES2 DIAG PPI\n"
 	for((i=0;i<${#diag[@]};i++)); do
 		r1=$((res1[$i]*res1[$i]))
 		r2=$((res2[$i]*res2[$i]))
